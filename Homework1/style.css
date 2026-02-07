@@ -1,0 +1,90 @@
+body{
+    background-color: olive;
+}
+.navBar{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    text-align: center;
+    align-items: center;
+    block-size: 50px;
+
+}
+button{
+    font-family: "Apple Braille";
+    background-color: orange;
+    margin: 20px;
+}
+hr{
+    color: orange;
+}
+h1{
+    margin: 50px;
+    text-align: center;
+    color: orange;
+    font-family: "Apple Braille", serif;
+}
+h2{
+    margin: 20px;
+    text-align: left;
+    color: orange;
+    font-family: "Apple Braille", serif;
+}
+h3{
+    /*margin: 20px;*/
+    text-align: center;
+    color: orange;
+    font-family: "Apple Braille", serif;
+}
+p{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: tan;
+    font-family: "Apple Braille";
+}
+a{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: tan;
+    font-family: "Apple Braille";
+}
+.image{
+    display: flex;
+    margin:auto;
+    justify-content: center;
+}
+.image-pro{
+    float: right;
+    margin-bottom: 50px;
+    margin-left: 25px;
+    width: 250px;
+    height: 250px;
+
+}
+.image-con{
+    display: flex;
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+}
+
+#img-con{
+    float: right;
+    margin-bottom: 50px;
+    margin-left: 25px;
+    width: 250px;
+    height: 250px;
+}
+
+img{
+    /*display: block;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*align-content: center;*/
+    width: 40%;
+    height: 40%;
+    border: 1px solid white;
+    border-radius: 10px;
+}
