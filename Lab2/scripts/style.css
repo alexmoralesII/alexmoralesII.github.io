@@ -1,0 +1,51 @@
+body{
+    background-image: url("images/GuessBgImgI.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+h1{
+    text-align: center;
+    color: tan;
+    margin-top: 325px;
+    margin-left: 275px;
+    font-family: "Academy Engraved LET";
+    font-size: 50px;
+    background-color: olive;
+    border-radius: 15px;
+    padding: 10px;
+    width: 400px;
+
+}
+.guessGame{
+    text-align: center;
+}
+h2{
+    text-align: center;
+    color: tan;
+    background-color: olive;
+    margin-left: 180px;
+    width: 400px;
+    border-radius: 15px;
+    padding: 5px;
+}
+p{
+    color:tan;
+    font-family: "Apple Braille", serif;
+
+}
+.guessGame{
+    margin-top: 30px;
+    margin-left: 100px;
+
+}
+button{
+    background-color: olive;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+
+button:hover{
+    background-color: orange;
+
+}

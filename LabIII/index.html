@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lab III: Quiz</title>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <h1>Sports Quiz</h1>
+    <label id = "question1Feedback">
+        1. Who was the 2025-2026 World Champion of F1?
+        <br>
+        <label id = "a1"><input  type="radio" name = "q1" value = "anws1"> Max Verstappen</label>
+        <label id = "a2"><input  type="radio" name = "q1" value = "anws2"> Lando Norris</label>
+        <label id = "a3"><input  type="radio" name = "q1" value = "anws3"> Oscar Piastri</label>
+
+    </label>
+
+<!--Q: Why does name attribute change the ability to just check one button-->
+<!--A: Because they are grouped witht he same name meanign only one at a time,
+if they had their ow name then they have their own group and can all be selected at the same time-->
+
+    <br>
+    <hr>
+
+    <label id = "question2Feedback">
+        Who won the 2026 Super Bowl?
+        <select id = Q2>
+            <option> Patriots </option>
+            <option> eagles </option>
+            <option> SeasHawks</option>
+            <option> Chiefs</option>
+
+        </select>
+    </label>
+    <br>
+    <hr>
+
+    <label id = "question3Feedback">
+        How many Super Bowls do the New England Patriots have? :
+        <input id = "Q3" type = "number" min = "0" max = "10" step = "1">
+    </label>
+<br>
+    <hr>
+    <label id = "question4Feedback">
+        Who Won the Last World Series(Baseball)?:
+        <input id = "textColor" type = "text">
+
+        <hr>
+    </label>
+
+
+
+    <button> Submit Quiz</button>
+
+</body>
+</html>

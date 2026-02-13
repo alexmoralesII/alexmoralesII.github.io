@@ -2,33 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <style>
-        body{
-            background-color: darkolivegreen;
-        }
-        h1{
-            text-align: center;
-            color: tan;
-        }
-        .guessGame{
-            text-align: center;
-        }
-
-    </style>.
+    <title>Lab II</title>
+    <script src = "script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Guessing Game</h1>
-<script src = "script.js" defer></script>
-<!--Defer: Ensures the pages does load before until page is fully loaded-->
+    <h1>Guessing Game!</h1>
+
+<!--Defer: Ensures the page does load until page is fully loaded-->
     <div class = "guessGame">
-        <p>Guess A Number Between 1 - 99</p>
+        <h2>Guess A Number Between 1 - 99</h2>
         <input id = "guessInput">
+        <br>
+        <br>
         <button id = "guessButton">Guess</button>
+        <button hidden id = resetButton>Lets Play Again!</button>
         <p id = guessResult></p>
+        <p id = randNumber></p>
         <p id = attemptsDisplay>Attempts: </p>
-        <p id = "wins"></p>
-        <p id = "loses"></p>
+        <p id = "winsDisplay">Wins: </p>
+        <p id = "losesDisplay">Losses: </p>
 
     </div>
 
