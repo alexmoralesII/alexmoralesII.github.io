@@ -3,4 +3,35 @@
     transform: scale(1.05);
     transition: 0.2s ease;
 }
+.btn{
+    margin: 10px;
+}
+#movieImg{
+    border: 2px solid black;
+    width: 400px;
+    border-radius: 10px;
+    padding-bottom: 50px;
+}
+.genreImages{
+    border: 2px solid black;
+    width: 200px;
+    border-radius: 10px;
+    display: block;
+    margin:10px;
+
+}
+#header,#caption{
+    font-family: "Comic Sans MS", cursive;
+}
+.container{
+    background-color: dimgrey;
+    width: 100%;
+}
+.subHeaders{
+    font-family: "Comic Sans MS", cursive;
+}
+
+body{
+    background-color: blanchedalmond;
+}
 

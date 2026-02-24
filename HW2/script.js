@@ -1,11 +1,20 @@
 document.querySelector("#next").addEventListener("click",guessGame);
+document.querySelector("#nextQuestion").addEventListener("click",handleNextQuestion);
+
+
 let score = 0;
+let currentGenreQuestions = [];
+let currentIndex = 0;
+let movieImg = document.querySelector("#movieImg");
+let radios = document.querySelectorAll(`input[name="options"]`);
+let labels = document.querySelectorAll("#options label");
+
 
 
 let intro = document.querySelector("#Intro");
-let gameDisney = document.querySelector("#disneyGamePlay");
-let gameMarvel = document.querySelector("#marvelGamePlay");
-let currentQuestions;
+let gamePlay = document.querySelector("#gamePlay");
+let results = document.querySelector("#resultsPage");
+
 let disneyQuestions = [
     {
         img: "Images/DisneyPixar/toystory.jpeg",
@@ -29,14 +38,14 @@ let disneyQuestions = [
     }
 ]
 
-let MarvelQuestions = [
+let marvelQuestions = [
     {
         img: "Images/Marvel/ironman.jpeg",
         correct: "Iron Man",
         choices: ["Iron Man", "Avengers Endgame", "Thor", "Deadpool"],
     },
     {
-        img: "Images/Marvel/avangersEndgame.jpeg",
+        img: "Images/Marvel/avengersEndgame.jpeg",
         correct: "Avengers Endgame",
         choices: ["Iron Man", "Avengers Endgame", "Thor", "Deadpool"],
     },
@@ -46,7 +55,7 @@ let MarvelQuestions = [
         choices: ["Iron Man", "Avengers Endgame", "Thor", "Deadpool"],
     },
     {
-        img: "Images/Marvel/deapool.jpeg",
+        img: "Images/Marvel/deadpool.jpeg",
         correct: "Deadpool",
         choices: ["Iron Man", "Avengers Endgame", "Thor", "Deadpool"],
     }
@@ -54,20 +63,43 @@ let MarvelQuestions = [
 ]
 
 function renderQuestion(){
+    let question = currentGenreQuestions[currentIndex];
+    movieImg.src = question.img;
+    let shuffled = shuffleOptions();
+        for(let i = 0; i < radios.length; i++){
+            radios[i].value = shuffled[i];
+            labels[i].textContent = shuffled[i];
+            radios[i].checked = false;
+        }
+
+}
+function handleNextQuestion(){
+    let correctAnswer = currentGenreQuestions[currentIndex].correct;
+    let userGuess = document.querySelector("input[name=options]:checked");
+    if(!isOptionsFormValid()){
+        return;
+    }
+    if(userGuess.value === correctAnswer ){
+        score += 25;
+    }
+    currentIndex++;
+    if(currentIndex === currentGenreQuestions.length){
+        intro.classList.add("d-none");
+        gamePlay.classList.add("d-none");
+        results.classList.remove("d-none");
+        document.querySelector("#score").textContent = score;
+        currentIndex = 0;
+        score = 0;
+        return;
+    }
+    renderQuestion();
 }
 
-
-
-// shuffleOptions();
-//
-// function shuffleOptions(){
-//     let OptionsArray = ["Max Verstappen", "Lando Norris", "Oscar Piastri"," Lewis Hamilton"];
-//     q1ChoicesArray = _.shuffle(q1ChoicesArray);
-//     for (let i = 0; i<q1ChoicesArray.length; i++){
-//         document.querySelector("#Q1Choices").innerHTML += `<input type = "radio" name = "q1" id = "${q1ChoicesArray[i]}" value = "${q1ChoicesArray[i]}"><label for = "${q1ChoicesArray[i]}"> ${q1ChoicesArray[i]}</label>`;
-//     }
-// }
-function isFormValid(){
+function shuffleOptions(){
+    let question = currentGenreQuestions[currentIndex];
+    return _.shuffle(question.choices);
+}
+function isGenreFormValid(){
     let isValid = true;
     if(!document.querySelector("input[name=genre]:checked")){
         isValid = false;
@@ -76,35 +108,36 @@ function isFormValid(){
     return isValid;
 }
 
+function isOptionsFormValid(){
+    let isValid = true;
+    if(!document.querySelector("input[name=options]:checked")){
+        isValid = false;
+        document.querySelector("#checker").innerHTML = "Please select an Answer";
+    }
+    return isValid;
+}
+
 function guessGame() {
     document.querySelector("#check").innerHTML = "";
-    if(!isFormValid()){
+    if(!isGenreFormValid()){
         return;
     }
     let gInput = document.querySelector("input[name=genre]:checked");
 
     if(gInput.value === "Disney Pixar"){
-        startNextPage(1);
-    }else{
-        startNextPage(2);
+        currentGenreQuestions = disneyQuestions;
+        intro.classList.add("d-none");
+        gamePlay.classList.remove("d-none");
+        currentIndex = 0;
+        score = 0;
+    } else{
+        currentGenreQuestions = marvelQuestions;
+        intro.classList.add("d-none");
+        gamePlay.classList.remove("d-none");
+        currentIndex = 0;
+        score = 0;
     }
-}
-
-function startNextPage(option){
-    if(option === 1){
-        displayDisneyPixar()
-    }else{
-        displayMarvel()
-    }
-}
-
-function displayDisneyPixar(){
-    intro.classList.add("d-none");
-    gameDisney.classList.remove("d-none");
-}
-function displayMarvel(){
-    intro.classList.add("d-none");
-    gameMarvel.classList.remove("d-none");
+    renderQuestion();
 }
 
 
