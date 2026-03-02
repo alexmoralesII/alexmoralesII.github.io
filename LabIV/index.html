@@ -8,28 +8,145 @@
 
 </head>
 <body class = "text-center">
-<h1 class = "p-5 bg-success text-white"> Sign Up Form </h1>
+<h1 class = "p-5 bg-success text-white font-monospace"> Sign Up Form </h1>
 
 <fieldset>
-  <legend>Sign Up</legend>
-  First Name: <input type="text"><br>
-  Last Name: <input type="text"><br>
-  Email: <input type="text"><br>
-  Phone Number:<input type="text"><br><br>
-  Zip Code: <input id = "zipCodeInput" type="text"><br>
-  City:<span id = "cityDisplay"></span>
-  <br>
-  Latitude:<span id = "latitudeDisplay"></span>
-  <br>
-  Longitude:<span id = "longitudeDisplay"></span>
-  <br><br>
-  State:  <select id = "state"></select><br>
-  Select a County: <select></select><br>
 
-  <label for = "username">Desired Username: </label>  <input type="text" id = "username"><span id = "usernameValidation"></span><br>
-  Password: <input type="password" id = "passwordInput">
-  Type Password Again: <input type="password"><br>
-  <input type="submit" value="Sign up!">
+  <div class="form-control">
+  <div class="row justify-content-center g-2 align-items-center p-3">
+    <div class="col-auto">
+      <label for = "fName" class = "col-form-label">First Name:</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" class = "form-control" id = "fName" placeholder="Michael">
+    </div>
+  </div>
+
+  <div class="row justify-content-center g-2 align-items-center p-3">
+    <div class="col-auto">
+      <label for = "lName" class = "col-form-label">Last Name:</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" class = "form-control" id = "lName" placeholder="Scott">
+    </div>
+  </div>
+
+  <div class="row justify-content-center g-2 align-items-center p-3">
+    <div class="col-auto">
+      <label for = "email" class = "col-form-label">Email Address:</label>
+    </div>
+    <div class="col-auto">
+      <input type="email" class = "form-control" id = "email" placeholder="name@example.com">
+    </div>
+  </div>
+
+  <div class="row justify-content-center g-2 align-items-center p-3">
+    <div class="col-auto">
+      <label for = "phoneNumber" class = "col-form-label">Phone-Number:</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" class = "form-control" id = "phoneNumber" placeholder="(123) 456-7890)" >
+    </div>
+  </div>
+
+  <div class="row justify-content-center g-2 align-items-center p-3">
+    <div class="col-auto">
+      <label for = "zipCodeInput" class = "col-form-label">Zip-Code:</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" class = "form-control" id = "zipCodeInput"><span id = "errorMessage"></span>
+    </div>
+  </div>
+
+
+<!--  Zip Code: <input id = "zipCodeInput" type="text"><br><span id = "errorMessage"></span>-->
+  <br>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-auto">
+        <label for = "cityDisplay" class = "col-form-label">City:</label>
+      </div>
+      <div class="col-auto">
+        <span id = "cityDisplay"></span>
+      </div>
+    </div>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-auto">
+        <label for = "latitudeDisplay" class = "col-form-label">latitude:</label>
+      </div>
+      <div class="col-auto">
+        <span id = "latitudeDisplay"></span>
+      </div>
+    </div>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-auto">
+        <label for = "longitudeDisplay" class = "col-form-label">latitude:</label>
+      </div>
+      <div class="col-auto">
+        <span id = "longitudeDisplay"></span>
+      </div>
+    </div>
+  <br>
+
+    <div class="row justify-content-center g-2 align-items-center">
+      <div class="col-auto">
+        <label for = "state" class = "col-form-label">State:</label>
+      </div>
+      <div class="col-auto">
+        <select class = "form-control" id = "state"></select>
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-center g-2 align-items-center">
+      <div class="col-auto">
+        <label for = "county" class = "col-form-label">Select a County:</label>
+      </div>
+      <div class="col-auto">
+        <select class = "form-control" id = "county"></select>
+      </div>
+    </div>
+
+    <div class="row justify-content-center g-2 align-items-center p-3">
+      <div class="col-auto">
+        <label for = "username" class = "col-form-label">Desired Username:</label>
+      </div>
+      <div class="col-auto">
+        <input type="text" class = "form-control" id = "username" placeholder="PunchTheMonkey123">
+      </div>
+      <div class="col-auto">
+        <span class = "form-text" id = "usernameValidation"></span>
+      </div>
+      <div class="col-auto">
+        <span class = "form-text" id = "usernameValidationAgain"></span>
+      </div>
+    </div>
+
+    <div class="row justify-content-center g-2 align-items-center p-3">
+      <div class="col-auto">
+        <label for = "passwordInput" class = "col-form-label">Password:</label>
+      </div>
+      <div class="col-auto">
+        <input type="password" class = "form-control" id = "passwordInput" placeholder="Password" >
+      </div>
+      <div class="col-auto">
+        <span class = "form-text" id = "passwordValidation"></span>
+      </div>
+    </div>
+
+    <div class="row justify-content-center g-2 align-items-center p-3">
+      <div class="col-auto">
+        <label for = "passwordInputAgain" class = "col-form-label">Type Password Again:</label>
+      </div>
+      <div class="col-auto">
+        <input type="password" class = "form-control" id = "passwordInputAgain" placeholder="Password Again" >
+      </div>
+      <div class="col-auto">
+        <span class = "form-text" id = "passwordRetypeValidation"></span>
+      </div>
+    </div>
+
+    <button  class = "btn btn-outline-primary" id = "signUpBtn"><input type="submit" value="Sign up!"></button>
+  </div>
+  <br>
 </fieldset>
 
 <script src="script.js"></script>
